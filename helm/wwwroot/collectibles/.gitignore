@@ -1,0 +1,12 @@
+# Ignore all subfolders in this directory except those starting with an underscore
+# Match directories only
+*/
+# Allow directories that begin with an underscore
+!_*/
+# Ensure files at this level (like _index.json or info files) are not ignored
+!*.json
+!*.xml
+!*.jpg
+!*.jpeg
+!*.png
+!*.svg
