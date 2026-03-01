@@ -76,7 +76,7 @@ body::before {
     right: -10px;
     bottom: -10px;
     z-index: -2;
-    background-image: url('/images/normandy.jpg');
+    background-image: url('/images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -106,12 +106,12 @@ body::before {
 .mud-main-content.background-focus::before {
     background-image: 
         linear-gradient(135deg,
-            rgba(232, 228, 217, 0.68) 0%,
-            rgba(240, 237, 228, 0.65) 50%,
-            rgba(232, 228, 217, 0.71) 100%),
+            rgba(232, 228, 217, 0.58) 0%,
+            rgba(240, 237, 228, 0.55) 50%,
+            rgba(232, 228, 217, 0.62) 100%),
         linear-gradient(180deg,
-            rgba(245, 243, 238, 0.65) 0%,
-            rgba(232, 227, 217, 0.68) 100%);
+            rgba(245, 243, 238, 0.55) 0%,
+            rgba(232, 227, 217, 0.58) 100%);
 }
 
 /* ═══════════════════════════════════════════════════════════════════
