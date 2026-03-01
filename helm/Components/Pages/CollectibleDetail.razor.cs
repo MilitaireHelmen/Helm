@@ -66,19 +66,32 @@ public partial class CollectibleDetail : ComponentBase
             ? "pa-1 rounded border-2 border-solid mud-border-primary"
             : "pa-1 rounded";
 
-    private string FormatDescription(string description)
+    private MarkupString FormatDescription(string description)
     {
         if (string.IsNullOrWhiteSpace(description))
         {
-            return string.Empty;
+            return new MarkupString(string.Empty);
         }
 
         var text = description.Trim();
-        text = System.Text.RegularExpressions.Regex.Replace(text, @"\r\n|\r|\n", "\n");
-        text = System.Text.RegularExpressions.Regex.Replace(text, @"\n{2,}", "<!PARAGRAPH!>");
-        text = System.Text.RegularExpressions.Regex.Replace(text, @"\n", " ");
-        text = text.Replace("<!PARAGRAPH!>", "\n\n");
         
-        return text;
+        // HTML encode to prevent XSS
+        text = System.Net.WebUtility.HtmlEncode(text);
+        
+        // Normalize line breaks
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"\r\n|\r|\n", "\n");
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"\n{2,}", "</p><p>");
+        text = System.Text.RegularExpressions.Regex.Replace(text, @"\n", " ");
+        
+        // Convert URLs to clickable links
+        text = System.Text.RegularExpressions.Regex.Replace(
+            text,
+            @"(https?://[^\s<>""]+)",
+            "<a href=\"$1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"mud-link mud-primary-text\">$1</a>");
+        
+        // Wrap in paragraph tags
+        text = $"<p>{text}</p>";
+        
+        return new MarkupString(text);
     }
 }
