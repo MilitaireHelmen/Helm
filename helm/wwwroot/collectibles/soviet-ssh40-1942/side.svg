@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#4a5d4a"/>
+  <ellipse cx="400" cy="300" rx="240" ry="220" fill="#5a6b5a" stroke="#3a4a3a" stroke-width="4"/>
+  <path d="M180 350 Q400 400 620 350" fill="none" stroke="#3a4a3a" stroke-width="3"/>
+  <ellipse cx="400" cy="150" rx="60" ry="30" fill="#5a6b5a" stroke="#3a4a3a" stroke-width="2"/>
+  <text x="400" y="540" text-anchor="middle" fill="#8a9b8a" font-family="Arial" font-size="24">SSH-40 Helmet - Side View</text>
+</svg>

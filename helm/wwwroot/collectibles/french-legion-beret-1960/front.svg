@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d4a2d"/>
+  <ellipse cx="400" cy="320" rx="280" ry="120" fill="#3d6b3d" stroke="#1d3a1d" stroke-width="3"/>
+  <ellipse cx="400" cy="280" rx="260" ry="100" fill="#4d7b4d"/>
+  <ellipse cx="400" cy="260" rx="220" ry="70" fill="#5d8b5d"/>
+  <circle cx="320" cy="300" r="40" fill="#c9a227" stroke="#8b7020" stroke-width="2"/>
+  <text x="400" y="520" text-anchor="middle" fill="#7dab7d" font-family="Arial" font-size="24">Legion Beret - Front View</text>
+</svg>

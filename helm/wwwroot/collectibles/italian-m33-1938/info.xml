@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collectible>
+  <name>Italian M33 Helmet</name>
+  <type>Helmet</type>
+  <country>Italy</country>
+  <date>1938</date>
+  <description>
+Italian M33 steel helmet, the standard helmet of the Royal Italian Army
+during World War II. This pre-war example dates to 1938 and shows the
+quality of peacetime production.
+
+The M33 is easily recognized by its distinctive rounded shape and
+prominent front visor ridge. This example retains its original
+grey-green paint finish typical of Italian helmets of this era.
+
+Interior features the original leather liner with aluminum frame
+and leather chinstrap. Manufacturer stamps visible inside indicate
+production at the Societ� Metallurgica Italiana facility.
+  </description>
+  <images>
+    <image primary="true">front.svg</image>
+    <image caption="Showing distinctive visor ridge">side.svg</image>
+    <image caption="Manufacturer markings">markings.svg</image>
+  </images>
+</collectible>

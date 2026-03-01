@@ -1,0 +1,107 @@
+@page "/collectible/{Id}"
+
+<PageTitle>@(Item?.Name ?? "Collectible")</PageTitle>
+
+<MudMainContent Class="pa-4 background-focus">
+    <MudContainer MaxWidth="MaxWidth.Large">
+        @if (Item is null)
+        {
+            <MudAlert Severity="Severity.Warning">
+                Collectible not found.
+            </MudAlert>
+            <MudButton Variant="Variant.Text"
+                       StartIcon="@Icons.Material.Filled.ArrowBack"
+                       Href="/"
+                       Class="mt-2">
+                Back to Collection
+            </MudButton>
+        }
+        else
+        {
+            <MudButton Variant="Variant.Text"
+                       StartIcon="@Icons.Material.Filled.ArrowBack"
+                       Href="/"
+                       Class="mb-4">
+                Back to Collection
+            </MudButton>
+
+            <MudPaper Elevation="0" Style="@Styles.DetailCard">
+                <MudGrid>
+                    <MudItem xs="12" md="7">
+                        @if (Item.Images.Count > 0 && SelectedImage is not null)
+                        {
+                            <MudImage Src="@SelectedImage.Url"
+                                      Alt="@(SelectedImage.Caption ?? Item.Name)"
+                                      ObjectFit="ObjectFit.Contain"
+                                      Height="350"
+                                      Class="mx-auto d-block cursor-pointer rounded"
+                                      Style="max-width: 100%;"
+                                      @onclick="@(async () => await OpenGallery(SelectedImageIndex))" />
+                            @if (!string.IsNullOrWhiteSpace(SelectedImage.Caption))
+                            {
+                                <MudText Typo="Typo.body2"
+                                         Align="Align.Center"
+                                         Color="Color.Secondary"
+                                         Class="mt-2">
+                                    @SelectedImage.Caption
+                                </MudText>
+                            }
+
+                        @if (Item.Images.Count > 1)
+                        {
+                            <MudStack Row="true" Justify="Justify.Center" Class="mt-3 flex-wrap">
+                                @for (var i = 0; i < Item.Images.Count; i++)
+                                {
+                                    var index = i;
+                                    var image = Item.Images[i];
+                                    <MudPaper Elevation="@(index == SelectedImageIndex ? 4 : 1)"
+                                              Class="@GetThumbnailClass(index)"
+                                              @onclick="() => SelectImage(index)">
+                                        <MudImage Src="@image.Url"
+                                                  Alt="@(image.Caption ?? $"Image {index + 1}")"
+                                                  ObjectFit="ObjectFit.Cover"
+                                                  Width="80"
+                                                  Height="80"
+                                                  Class="rounded cursor-pointer" />
+                                    </MudPaper>
+                                }
+                            </MudStack>
+                        }
+
+                        <MudButton Variant="Variant.Text"
+                                   StartIcon="@Icons.Material.Filled.Fullscreen"
+                                   Color="Color.Primary"
+                                   Class="mt-2"
+                                   OnClick="@(async () => await OpenGallery(SelectedImageIndex))">
+                            View Full Gallery
+                        </MudButton>
+                    }
+                    else
+                {
+                    <MudAlert Severity="Severity.Info">No images available.</MudAlert>
+                }
+            </MudItem>
+
+            <MudItem xs="12" md="5">
+                <MudText Typo="Typo.h4" GutterBottom="true">@Item.Name</MudText>
+
+                <MudStack Row="true" Spacing="2" Class="mb-4">
+                    <MudChip T="string" Color="Color.Primary">@Item.ItemType</MudChip>
+                    <MudChip T="string" Color="Color.Secondary">@Item.Country</MudChip>
+                    @if (!string.IsNullOrWhiteSpace(Item.Date))
+                    {
+                        <MudChip T="string" Color="Color.Tertiary">@Item.Date</MudChip>
+                    }
+                </MudStack>
+
+                <MudDivider Class="mb-4" />
+
+                <MudText Typo="Typo.body1" Style="white-space: pre-line;">
+                    @FormatDescription(Item.Description)
+                </MudText>
+            </MudItem>
+        </MudGrid>
+            </MudPaper>
+    }
+    </MudContainer>
+</MudMainContent>

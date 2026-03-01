@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collectible>
+  <name>British Paratrooper Beret</name>
+  <type>Beret</type>
+  <country>United Kingdom</country>
+  <date>1944</date>
+  <description>
+Authentic World War II British Airborne Forces maroon beret. This iconic
+"Red Beret" was worn by paratroopers of the British Army during operations
+including Market Garden and the Rhine crossings.
+
+Features the original cap badge of the Parachute Regiment with the distinctive
+Bellerophon riding Pegasus design. The interior retains its leather sweatband
+and manufacturer's label.
+  </description>
+  <images>
+    <image primary="true">front.jpg</image>
+    <image caption="Cap badge detail">badge.jpg</image>
+    <image caption="Interior manufacturer label">label.jpg</image>
+  </images>
+</collectible>

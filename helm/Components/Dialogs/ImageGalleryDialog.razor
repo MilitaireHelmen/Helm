@@ -1,0 +1,40 @@
+@using helm.Models
+@using helm.Theme
+
+<MudDialog Style="@Styles.DetailCard">
+    <DialogContent>
+        <MudCarousel @bind-SelectedIndex="SelectedIndex"
+                     TData="object"
+                     ShowArrows="true"
+                     ShowBullets="false"
+                     AutoCycle="false"
+                     Style="height: 70vh; min-height: 400px;">
+            @foreach (var image in Images)
+            {
+                <MudCarouselItem>
+                    <div class="d-flex flex-column align-center justify-center" style="height: 100%;">
+                        <MudImage Src="@image.Url"
+                                  Alt="@(image.Caption ?? Title)"
+                                  ObjectFit="ObjectFit.Contain"
+                                  Style="max-height: calc(70vh - 60px); max-width: 100%;" />
+                        @if (!string.IsNullOrWhiteSpace(image.Caption))
+                        {
+                            <MudText Typo="Typo.body2"
+                                     Align="Align.Center"
+                                     Color="Color.Secondary"
+                                     Class="mt-2">
+                                @image.Caption
+                            </MudText>
+                        }
+                    </div>
+                </MudCarouselItem>
+            }
+        </MudCarousel>
+    </DialogContent>
+    <DialogActions>
+        <MudText Typo="Typo.caption" Color="Color.Secondary" Class="mr-auto ml-4">
+            @(SelectedIndex + 1) / @Images.Count
+        </MudText>
+        <MudButton OnClick="Close">Close</MudButton>
+    </DialogActions>
+</MudDialog>

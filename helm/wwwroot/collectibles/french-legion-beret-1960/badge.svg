@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#2d4a2d"/>
+  <circle cx="400" cy="300" r="120" fill="#c9a227" stroke="#8b7020" stroke-width="4"/>
+  <ellipse cx="400" cy="380" rx="40" ry="60" fill="#c9a227" stroke="#8b7020" stroke-width="3"/>
+  <path d="M360 220 L400 180 L440 220" fill="none" stroke="#8b7020" stroke-width="8"/>
+  <path d="M350 230 L400 170 L450 230" fill="none" stroke="#c9a227" stroke-width="4"/>
+  <circle cx="400" cy="300" r="30" fill="#8b7020"/>
+  <text x="400" y="540" text-anchor="middle" fill="#7dab7d" font-family="Arial" font-size="24">Seven-Flame Grenade Badge</text>
+</svg>

@@ -1,0 +1,188 @@
+﻿@page "/"
+
+<PageTitle>Collectibles</PageTitle>
+
+<MudLayout>
+    <MudDrawer @bind-Open="FilterDrawerOpen"
+               Variant="DrawerVariant.Mini"
+               OpenMiniOnHover="false"
+               Elevation="1"
+               MiniWidth="0px"
+               Width="280px">
+        <MudDrawerHeader>
+            <MudStack Row="true" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Style="width: 100%;">
+                <MudText Typo="Typo.h6" Style="@Styles.DrawerHeaderText">Filters</MudText>
+                <MudIconButton Icon="@Icons.Material.Filled.ChevronLeft"
+                               OnClick="ToggleFilterDrawer"
+                               Size="Size.Small"
+                               Style="@Styles.DrawerIconButton" />
+            </MudStack>
+        </MudDrawerHeader>
+        <div class="px-5" style="padding-top: 10px;">
+            <MudTextField @bind-Value="SearchText"
+                          Label="Search"
+                          Variant="Variant.Outlined"
+                          Adornment="Adornment.Start"
+                          AdornmentIcon="@Icons.Material.Filled.Search"
+                          Immediate="true"
+                          DebounceInterval="300"
+                          Class="mb-4"
+                          Style="@Styles.DrawerInput" />
+
+            <MudSelect T="string"
+                       @bind-Value="SelectedItemType"
+                       Label="Type"
+                       Variant="Variant.Outlined"
+                       Clearable="true"
+                       Class="mb-4"
+                       Style="@Styles.DrawerInput">
+                @foreach (var type in ItemTypes)
+                {
+                    <MudSelectItem Value="@type">@type</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudSelect T="string"
+                       @bind-Value="SelectedCountry"
+                       Label="Country"
+                       Variant="Variant.Outlined"
+                       Clearable="true"
+                       Class="mb-4"
+                       Style="@Styles.DrawerInput">
+                @foreach (var country in Countries)
+                {
+                    <MudSelectItem Value="@country">@country</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudButton Variant="Variant.Text"
+                       Color="Color.Secondary"
+                       StartIcon="@Icons.Material.Filled.Clear"
+                       OnClick="ClearFilters"
+                       FullWidth="true"
+                       Style="@Styles.DrawerButton">
+                Clear Filters
+            </MudButton>
+        </div>
+    </MudDrawer>
+
+    <MudMainContent Class="pa-4 background-home">
+        @* Toolbar *@
+        <MudStack Row="true" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Class="mb-4">
+            <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                <MudIconButton Icon="@Icons.Material.Filled.FilterList"
+                               OnClick="ToggleFilterDrawer"
+                               Color="@(FilterDrawerOpen ? Color.Primary : Color.Default)"
+                               Title="Toggle Filters"
+                               Style="@Styles.ContentBackground" />
+                <MudChip T="string" Size="Size.Small" Variant="Variant.Filled" Style="@Styles.ItemCountPill">
+                    @FilteredItems.Count items
+                </MudChip>
+                @if (HasActiveFilters)
+                {
+                    <MudChip T="string" 
+                             Size="Size.Small" 
+                             Color="Color.Info"
+                             OnClose="ClearFilters">
+                        Filtered
+                    </MudChip>
+                }
+            </MudStack>
+
+            <MudToggleGroup T="ViewMode" @bind-Value="CurrentViewMode" Color="Color.Primary" Style="@Styles.ToggleGroup">
+                <MudToggleItem Value="ViewMode.Large" Style="@Styles.ToggleItem">
+                    <MudIcon Icon="@Icons.Material.Filled.ViewModule" Size="Size.Small" />
+                </MudToggleItem>
+                <MudToggleItem Value="ViewMode.Small" Style="@Styles.ToggleItem">
+                    <MudIcon Icon="@Icons.Material.Filled.Apps" Size="Size.Small" />
+                </MudToggleItem>
+                <MudToggleItem Value="ViewMode.List" Style="@Styles.ToggleItem">
+                    <MudIcon Icon="@Icons.Material.Filled.ViewList" Size="Size.Small" />
+                </MudToggleItem>
+            </MudToggleGroup>
+        </MudStack>
+
+        @* Content based on view mode *@
+        @if (FilteredItems.Count == 0)
+        {
+            <MudAlert Severity="Severity.Info" Style="@Styles.Alert">
+                No collectibles found matching your filters.
+            </MudAlert>
+        }
+        else if (CurrentViewMode == ViewMode.List)
+        {
+            @* List View *@
+            <MudTable Items="@FilteredItems"
+                      Hover="true"
+                      Dense="true"
+                      Striped="false"
+                      Breakpoint="Breakpoint.Sm"
+                      OnRowClick="@(args => ViewItem(args.Item.Id))"
+                      T="Collectible"
+                      RowClass="cursor-pointer"
+                      SortLabel="Sort By"
+                      Style="@Styles.Table">
+                <HeaderContent>
+                    <MudTh Style="width: 60px;"></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<Collectible, object>(x => x.Name)">Name</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<Collectible, object>(x => x.ItemType)">Type</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<Collectible, object>(x => x.Country)">Country</MudTableSortLabel></MudTh>
+                    <MudTh><MudTableSortLabel SortBy="new Func<Collectible, object>(x => x.Date ?? string.Empty)">Date</MudTableSortLabel></MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Image">
+                        <MudImage Src="@(context.PrimaryImage?.Url ?? "/images/placeholder.png")"
+                                  Width="40"
+                                  Height="40"
+                                  ObjectFit="ObjectFit.Cover"
+                                  Class="" />
+                    </MudTd>
+                    <MudTd DataLabel="Name">@context.Name</MudTd>
+                    <MudTd DataLabel="Type">
+                        <MudChip T="string" Size="Size.Small" Color="Color.Primary">@context.ItemType</MudChip>
+                    </MudTd>
+                    <MudTd DataLabel="Country">@context.Country</MudTd>
+                    <MudTd DataLabel="Date">@context.Date</MudTd>
+                </RowTemplate>
+            </MudTable>
+        }
+        else
+        {
+            @* Grid Views (Large and Small Icons) *@
+            <MudGrid>
+                @foreach (var item in FilteredItems)
+                {
+                    @if (CurrentViewMode == ViewMode.Large)
+                    {
+                        <MudItem xs="12" sm="6" md="4" lg="3">
+                            <MudCard Elevation="2" Class="cursor-pointer" Style="@Styles.Card" @onclick="() => ViewItem(item.Id)">
+                                <MudCardMedia Image="@(item.PrimaryImage?.Url ?? "/images/placeholder.png")"
+                                              Height="200" />
+                                <MudCardContent>
+                                    <MudText Typo="Typo.h6">@item.Name</MudText>
+                                    <MudText Typo="Typo.body2" Style="@($"color: {Theme.Colors.WashedCanvas}")">
+                                        @item.Country · @item.Date
+                                    </MudText>
+                                </MudCardContent>
+                            </MudCard>
+                        </MudItem>
+                    }
+                    else
+                    {
+                        @* Small Icons View *@
+                        <MudItem xs="6" sm="4" md="3" lg="2">
+                            <MudCard Elevation="1" Class="cursor-pointer" Style="@Styles.Card" @onclick="() => ViewItem(item.Id)">
+                                <MudCardMedia Image="@(item.PrimaryImage?.Url ?? "/images/placeholder.png")"
+                                              Height="100" />
+                                <MudCardContent Class="pa-2" Style="@Styles.SmallCardContent">
+                                    <MudText Typo="Typo.body2" Style="@Styles.CardTextTruncate">@item.Name</MudText>
+                                    <MudText Typo="Typo.caption" Style="@Styles.CardSecondaryText">@item.Country · @item.Date</MudText>
+                                </MudCardContent>
+                            </MudCard>
+                        </MudItem>
+                    }
+                }
+            </MudGrid>
+        }
+    </MudMainContent>
+</MudLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  COLLECTIBLE TEMPLATE
+  Copy this folder, rename it, and fill in the details below.
+  
+  Folder naming: use lowercase with hyphens (e.g., "us-m1-helmet-1943")
+  
+  Images: Place image files in the same folder as this info.xml file.
+          Supported formats: jpg, png, webp
+          Mark one image as primary="true" for the thumbnail.
+-->
+<collectible>
+  <name>Your Collectible Name</name>
+  <type>Helmet</type><!-- Options: Helmet, Beret, or add your own -->
+  <country>Country Name</country>
+  <date>1945</date><!-- Year or date range like "1939-1945" -->
+  <description>
+Detailed description of your collectible goes here.
+You can use multiple lines.
+
+Include information about:
+- Condition and authenticity
+- Historical significance
+- Unique markings or features
+- Provenance if known
+  </description>
+  <images>
+    <image primary="true">main.jpg</image>
+    <image caption="Optional caption for this image">detail.jpg</image>
+    <image>another-view.jpg</image>
+  </images>
+</collectible>

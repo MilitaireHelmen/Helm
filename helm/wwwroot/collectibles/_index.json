@@ -1,0 +1,138 @@
+[
+  {
+    "id": "soviet-ssh40-1942",
+    "name": "Soviet SSH-40 Helmet",
+    "itemType": "Helmet",
+    "country": "Soviet Union",
+    "date": "1942",
+    "description": "\nSoviet SSH-40 steel helmet from World War II, the standard issue helmet\nfor Red Army forces during the Great Patriotic War. This example was\nmanufactured in 1942 during the height of the conflict.\n\nThe SSH-40 was an improvement over the earlier SSH-39, featuring a\nsimplified production process while maintaining excellent protection.\nThe distinctive shape with its wide brim provided good coverage.\n\nThis helmet retains its original khaki green paint with visible wear\nfrom field use. The three-pad liner system and chinstrap are intact.\nFactory markings stamped inside indicate Leningrad production.\n  ",
+    "images": [
+      {
+        "isPrimary": true,
+        "caption": null,
+        "fileName": "front.svg",
+        "url": "/collectibles/soviet-ssh40-1942/front.svg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Profile showing distinctive shape",
+        "fileName": "side.svg",
+        "url": "/collectibles/soviet-ssh40-1942/side.svg"
+      }
+    ],
+    "primaryImage": {
+      "isPrimary": true,
+      "caption": null,
+      "fileName": "front.svg",
+      "url": "/collectibles/soviet-ssh40-1942/front.svg"
+    }
+  },
+  {
+    "id": "example-british-para-beret",
+    "name": "British Paratrooper Beret",
+    "itemType": "Beret",
+    "country": "United Kingdom",
+    "date": "1944",
+    "description": "\nAuthentic World War II British Airborne Forces maroon beret. This iconic\n\u0022Red Beret\u0022 was worn by paratroopers of the British Army during operations\nincluding Market Garden and the Rhine crossings.\n\nFeatures the original cap badge of the Parachute Regiment with the distinctive\nBellerophon riding Pegasus design. The interior retains its leather sweatband\nand manufacturer\u0027s label.\n  ",
+    "images": [
+      {
+        "isPrimary": true,
+        "caption": null,
+        "fileName": "front.jpg",
+        "url": "/collectibles/example-british-para-beret/front.jpg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Cap badge detail",
+        "fileName": "badge.jpg",
+        "url": "/collectibles/example-british-para-beret/badge.jpg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Interior manufacturer label",
+        "fileName": "label.jpg",
+        "url": "/collectibles/example-british-para-beret/label.jpg"
+      }
+    ],
+    "primaryImage": {
+      "isPrimary": true,
+      "caption": null,
+      "fileName": "front.jpg",
+      "url": "/collectibles/example-british-para-beret/front.jpg"
+    }
+  },
+  {
+    "id": "us-m1-helmet-1943",
+    "name": "US M1 Steel Helmet",
+    "itemType": "Helmet",
+    "country": "United States",
+    "date": "1943",
+    "description": "\nWorld War II era US M1 steel helmet, the iconic \u0022steel pot\u0022 that served\nAmerican forces from 1941 through the 1980s. This example dates to 1943\nproduction and features the characteristic olive drab finish.\n\nThe helmet consists of two parts: the outer steel shell and the inner\nfiber liner (M1 helmet liner). This example retains both components\nalong with the original webbing suspension system and chin strap.\n\nFront seam construction indicates early war production. Heat stamp\nvisible inside the shell shows manufacturer and lot number.\n  ",
+    "images": [
+      {
+        "isPrimary": true,
+        "caption": null,
+        "fileName": "front.svg",
+        "url": "/collectibles/us-m1-helmet-1943/front.svg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Side profile",
+        "fileName": "side.svg",
+        "url": "/collectibles/us-m1-helmet-1943/side.svg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Interior liner system",
+        "fileName": "interior.svg",
+        "url": "/collectibles/us-m1-helmet-1943/interior.svg"
+      }
+    ],
+    "primaryImage": {
+      "isPrimary": true,
+      "caption": null,
+      "fileName": "front.svg",
+      "url": "/collectibles/us-m1-helmet-1943/front.svg"
+    }
+  },
+  {
+    "id": "example-german-m35",
+    "name": "German M35 Steel Helmet",
+    "itemType": "Helmet",
+    "country": "Germany",
+    "date": "1940",
+    "description": "\nOriginal World War II German M35 Stahlhelm (steel helmet) in excellent condition.\nThis helmet features the classic Germanic design with rolled edge and original\nfield grey paint finish. The interior retains its original leather liner and\naluminum liner band. Chinstrap is complete with original buckle.\n\nMarkings visible inside include the manufacturer\u0027s stamp and lot number.\nThis example shows typical wartime wear consistent with field use.\n  ",
+    "images": [
+      {
+        "isPrimary": true,
+        "caption": null,
+        "fileName": "front.jpg",
+        "url": "/collectibles/example-german-m35/front.jpg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Side profile showing rolled edge",
+        "fileName": "side.jpg",
+        "url": "/collectibles/example-german-m35/side.jpg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Interior liner and markings",
+        "fileName": "interior.jpg",
+        "url": "/collectibles/example-german-m35/interior.jpg"
+      },
+      {
+        "isPrimary": false,
+        "caption": "Manufacturer stamp detail",
+        "fileName": "detail.jpg",
+        "url": "/collectibles/example-german-m35/detail.jpg"
+      }
+    ],
+    "primaryImage": {
+      "isPrimary": true,
+      "caption": null,
+      "fileName": "front.jpg",
+      "url": "/collectibles/example-german-m35/front.jpg"
+    }
+  }
+]

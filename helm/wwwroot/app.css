@@ -1,0 +1,234 @@
+﻿/* ═══════════════════════════════════════════════════════════════════
+   CSS Variables - Mirrors MainTheme.cs color constants
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+    /* Core colors (from MainTheme.cs) */
+    --field-olive: #3A4335;
+    --field-olive-light: #4E5A47;
+    --field-olive-dark: #2A3127;
+    --washed-canvas: #6B705C;
+    --dust-beige: #C2B8A3;
+    --dust-beige-dark: #A69D8A;
+    --off-white: #F5F3EE;
+    --off-white-dim: #E8E3D9;
+    --aged-paper: #E8E4D9;
+    --brass-tone: #8C7A3C;
+    
+    /* Transparency variants */
+    --olive-hover: rgba(58, 67, 53, 0.15);
+    --olive-selected: rgba(58, 67, 53, 0.85);
+    --beige-border: rgba(212, 204, 187, 0.4);
+    --beige-border-hover: rgba(212, 204, 187, 0.6);
+    --brass-selected: rgba(140, 122, 60, 0.4);
+    --white-hover: rgba(255, 255, 255, 0.12);
+    --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+h1:focus {
+    outline: none;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid #e50000;
+}
+
+.validation-message {
+    color: #e50000;
+}
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
+
+.darker-border-checkbox.form-check-input {
+    border-color: #929292;
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Global Background - Covers entire viewport including behind sidebar
+   ═══════════════════════════════════════════════════════════════════ */
+body::before {
+    content: '';
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -2;
+    background-image: url('/images/normandy.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(0px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Main Content Background - Olive-tinted canvas feel
+   ═══════════════════════════════════════════════════════════════════ */
+.mud-main-content {
+    min-height: 100vh;
+    position: relative;
+}
+
+.mud-main-content::before {
+    content: '';
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+}
+
+/* Background overlay for all pages - Light warm overlay */
+.mud-main-content.background-home::before,
+.mud-main-content.background-focus::before {
+    background-image: 
+        linear-gradient(135deg,
+            rgba(232, 228, 217, 0.68) 0%,
+            rgba(240, 237, 228, 0.65) 50%,
+            rgba(232, 228, 217, 0.71) 100%),
+        linear-gradient(180deg,
+            rgba(245, 243, 238, 0.65) 0%,
+            rgba(232, 227, 217, 0.68) 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Toggle Group - Hover and selected states
+   ═══════════════════════════════════════════════════════════════════ */
+.mud-toggle-item:hover {
+    background-color: var(--olive-hover) !important;
+}
+
+.mud-toggle-item.mud-toggle-item-selected {
+    background-color: var(--olive-selected) !important;
+    color: var(--off-white) !important;
+}
+
+.mud-toggle-item.mud-toggle-item-selected .mud-icon-root {
+    color: var(--off-white) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Sidebar/Drawer - Semi-transparent with background showing through
+   ═══════════════════════════════════════════════════════════════════ */
+.mud-drawer {
+    background: linear-gradient(180deg, 
+        rgba(78, 90, 71, 0.88) 0%,
+        rgba(58, 67, 53, 0.90) 40%,
+        rgba(42, 49, 39, 0.92) 100%) !important;
+    border-right: 1px solid rgba(107, 112, 92, 0.6) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.mud-drawer-header {
+    border-bottom: 1px solid rgba(212, 204, 187, 0.3);
+}
+
+.mud-drawer .mud-typography,
+.mud-drawer .mud-nav-link,
+.mud-drawer .mud-list-item,
+.mud-drawer .mud-input-label,
+.mud-drawer .mud-input-slot,
+.mud-drawer .mud-button-text {
+    color: var(--off-white) !important;
+    text-shadow: var(--shadow-subtle);
+}
+
+.mud-drawer .mud-icon-root {
+    color: var(--off-white-dim) !important;
+}
+
+.mud-drawer .mud-nav-link:hover,
+.mud-drawer .mud-list-item:hover {
+    background-color: var(--white-hover) !important;
+}
+
+.mud-drawer .mud-input-outlined .mud-input-slot {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    border-color: var(--beige-border) !important;
+}
+
+.mud-drawer .mud-input-outlined:hover .mud-input-slot {
+    border-color: var(--beige-border-hover) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Popups/Dropdowns - Match sidebar olive theme
+   ═══════════════════════════════════════════════════════════════════ */
+.mud-popover {
+    background: linear-gradient(180deg, var(--field-olive-light) 0%, var(--field-olive) 100%) !important;
+    border: 1px solid var(--washed-canvas) !important;
+    box-shadow: 0 4px 16px rgba(26, 28, 25, 0.4) !important;
+}
+
+.mud-list {
+    background: transparent !important;
+}
+
+.mud-list-item {
+    color: var(--off-white) !important;
+    text-shadow: var(--shadow-subtle);
+}
+
+.mud-list-item:hover {
+    background-color: var(--white-hover) !important;
+}
+
+.mud-list-item.mud-selected {
+    background-color: var(--brass-selected) !important;
+}
+
+.mud-list-item.mud-selected:hover {
+    background-color: rgba(140, 122, 60, 0.5) !important;
+}
+
+.mud-popover .mud-typography,
+.mud-popover .mud-list-item-text {
+    color: var(--off-white) !important;
+}
+
+.mud-popover .mud-icon-root {
+    color: var(--off-white-dim) !important;
+}
+
+.mud-popover .mud-selected .mud-icon-root {
+    color: #D4B85A !important;
+}
+
+.mud-popover .mud-divider {
+    border-color: rgba(212, 204, 187, 0.25) !important;
+}
+
+/* Dialog popups */
+.mud-dialog {
+    background: linear-gradient(180deg, var(--aged-paper) 0%, #DED9CC 100%) !important;
+    border: 1px solid var(--dust-beige-dark) !important;
+}
+
+.mud-dialog .mud-dialog-title {
+    background-color: var(--olive-hover);
+    border-bottom: 1px solid var(--dust-beige);
+}

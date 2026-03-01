@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collectible>
+  <name>US M1 Steel Helmet</name>
+  <type>Helmet</type>
+  <country>United States</country>
+  <date>1943</date>
+  <description>
+World War II era US M1 steel helmet, the iconic "steel pot" that served
+American forces from 1941 through the 1980s. This example dates to 1943
+production and features the characteristic olive drab finish.
+
+The helmet consists of two parts: the outer steel shell and the inner
+fiber liner (M1 helmet liner). This example retains both components
+along with the original webbing suspension system and chin strap.
+
+Front seam construction indicates early war production. Heat stamp
+visible inside the shell shows manufacturer and lot number.
+  </description>
+  <images>
+    <image primary="true">front.svg</image>
+    <image caption="Side profile">side.svg</image>
+    <image caption="Interior liner system">interior.svg</image>
+  </images>
+</collectible>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collectible>
+  <name>Soviet SSH-40 Helmet</name>
+  <type>Helmet</type>
+  <country>Soviet Union</country>
+  <date>1942</date>
+  <description>
+Soviet SSH-40 steel helmet from World War II, the standard issue helmet
+for Red Army forces during the Great Patriotic War. This example was
+manufactured in 1942 during the height of the conflict.
+
+The SSH-40 was an improvement over the earlier SSH-39, featuring a
+simplified production process while maintaining excellent protection.
+The distinctive shape with its wide brim provided good coverage.
+
+This helmet retains its original khaki green paint with visible wear
+from field use. The three-pad liner system and chinstrap are intact.
+Factory markings stamped inside indicate Leningrad production.
+  </description>
+  <images>
+    <image primary="true">front.svg</image>
+    <image caption="Profile showing distinctive shape">side.svg</image>
+  </images>
+</collectible>

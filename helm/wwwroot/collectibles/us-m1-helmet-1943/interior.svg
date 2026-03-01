@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#3d5c3d"/>
+  <ellipse cx="400" cy="300" rx="250" ry="200" fill="#4a6b4a" stroke="#2d4a2d" stroke-width="4"/>
+  <ellipse cx="400" cy="300" rx="180" ry="140" fill="#8b7355"/>
+  <line x1="400" y1="160" x2="400" y2="440" stroke="#6b5344" stroke-width="2"/>
+  <line x1="220" y1="300" x2="580" y2="300" stroke="#6b5344" stroke-width="2"/>
+  <text x="400" y="540" text-anchor="middle" fill="#7a9a7a" font-family="Arial" font-size="24">US M1 Helmet - Interior</text>
+</svg>

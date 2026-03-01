@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#4a2a2a"/>
+  <circle cx="400" cy="300" r="130" fill="#c9a227" stroke="#8b7020" stroke-width="4"/>
+  <ellipse cx="400" cy="220" rx="80" ry="60" fill="#87ceeb" stroke="#5f9ea0" stroke-width="2"/>
+  <path d="M360 200 L400 180 L440 200 L420 240 L380 240 Z" fill="#c9a227"/>
+  <text x="400" y="540" text-anchor="middle" fill="#cb8383" font-family="Arial" font-size="24">Pegasus Badge Detail</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#3a4a3a"/>
+  <rect x="280" y="200" width="240" height="150" rx="5" fill="#4a5a4a"/>
+  <text x="400" y="260" text-anchor="middle" fill="#7a8a7a" font-family="Courier" font-size="20">ET64</text>
+  <text x="400" y="300" text-anchor="middle" fill="#7a8a7a" font-family="Courier" font-size="16">Lot 4521</text>
+  <text x="400" y="540" text-anchor="middle" fill="#8a9a8a" font-family="Arial" font-size="24">Maker's Mark Detail</text>
+</svg>

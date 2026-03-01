@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collectible>
+  <name>French Foreign Legion Beret</name>
+  <type>Beret</type>
+  <country>France</country>
+  <date>1960</date>
+  <description>
+French Foreign Legion green beret from the Algerian War period. The
+distinctive green color identifies the wearer as a member of the
+legendary L�gion �trang�re.
+
+This beret features the seven-flame grenade badge of the Foreign Legion,
+a symbol dating back to the unit's formation in 1831. The interior
+shows the manufacturer's label and size markings.
+
+The beret is shaped in the traditional French military style, worn
+tilted to the right with the badge positioned over the left eye.
+Excellent condition with minimal wear to the wool fabric.
+  </description>
+  <images>
+    <image primary="true">front.svg</image>
+    <image caption="Grenade badge detail">badge.svg</image>
+  </images>
+</collectible>

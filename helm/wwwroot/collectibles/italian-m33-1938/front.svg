@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#5a6b5a"/>
+  <ellipse cx="400" cy="320" rx="260" ry="180" fill="#6b7c6b" stroke="#4a5b4a" stroke-width="4"/>
+  <ellipse cx="400" cy="270" rx="240" ry="130" fill="#7b8c7b"/>
+  <path d="M150 340 Q400 380 650 340" fill="#6b7c6b" stroke="#4a5b4a" stroke-width="3"/>
+  <text x="400" y="540" text-anchor="middle" fill="#9bac9b" font-family="Arial" font-size="24">Italian M33 - Front View</text>
+</svg>

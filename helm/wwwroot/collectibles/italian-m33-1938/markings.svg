@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#5a6b5a"/>
+  <rect x="200" y="200" width="400" height="200" rx="10" fill="#4a5b4a"/>
+  <text x="400" y="270" text-anchor="middle" fill="#8b7355" font-family="Courier" font-size="28">S.M.I.</text>
+  <text x="400" y="310" text-anchor="middle" fill="#8b7355" font-family="Courier" font-size="22">1938</text>
+  <text x="400" y="360" text-anchor="middle" fill="#8b7355" font-family="Courier" font-size="18">Lotto 4521</text>
+  <text x="400" y="540" text-anchor="middle" fill="#9bac9b" font-family="Arial" font-size="24">Manufacturer Stamp Detail</text>
+</svg>

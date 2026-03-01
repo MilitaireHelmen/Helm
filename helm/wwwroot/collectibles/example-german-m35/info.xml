@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<collectible>
+  <name>German M35 Steel Helmet</name>
+  <type>Helmet</type>
+  <country>Germany</country>
+  <date>1940</date>
+  <description>
+Original World War II German M35 Stahlhelm (steel helmet) in excellent condition.
+This helmet features the classic Germanic design with rolled edge and original
+field grey paint finish. The interior retains its original leather liner and
+aluminum liner band. Chinstrap is complete with original buckle.
+
+Markings visible inside include the manufacturer's stamp and lot number.
+This example shows typical wartime wear consistent with field use.
+  </description>
+  <images>
+    <image primary="true">front.jpg</image>
+    <image caption="Side profile showing rolled edge">side.jpg</image>
+    <image caption="Interior liner and markings">interior.jpg</image>
+    <image caption="Manufacturer stamp detail">detail.jpg</image>
+  </images>
+</collectible>

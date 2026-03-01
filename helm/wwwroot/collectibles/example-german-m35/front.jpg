@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#4a5a4a"/>
+  <ellipse cx="400" cy="300" rx="280" ry="190" fill="#5a6a5a" stroke="#3a4a3a" stroke-width="4"/>
+  <ellipse cx="400" cy="260" rx="250" ry="140" fill="#6a7a6a"/>
+  <path d="M140 320 Q400 360 660 320" fill="#5a6a5a" stroke="#3a4a3a" stroke-width="3"/>
+  <text x="400" y="540" text-anchor="middle" fill="#8a9a8a" font-family="Arial" font-size="24">German M35 - Front View</text>
+</svg>
