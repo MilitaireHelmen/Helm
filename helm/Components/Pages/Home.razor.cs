@@ -1,6 +1,7 @@
 using helm.Models;
 using helm.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace helm.Components.Pages;
 
@@ -25,20 +26,57 @@ public partial class Home : ComponentBase
         !string.IsNullOrWhiteSpace(SelectedCountry);
 
     private string? _searchText;
-    private string? SearchText { get => _searchText; set { _searchText = value; ApplyFilters(); } }
+    private string? SearchText { get => _searchText; set { _searchText = value; ApplyFilters(); UpdateUrl(); } }
 
     private string? _selectedItemType;
-    private string? SelectedItemType { get => _selectedItemType; set { _selectedItemType = value; ApplyFilters(); } }
+    private string? SelectedItemType { get => _selectedItemType; set { _selectedItemType = value; ApplyFilters(); UpdateUrl(); } }
 
     private string? _selectedCountry;
-    private string? SelectedCountry { get => _selectedCountry; set { _selectedCountry = value; ApplyFilters(); } }
+    private string? SelectedCountry { get => _selectedCountry; set { _selectedCountry = value; ApplyFilters(); UpdateUrl(); } }
 
     protected override void OnInitialized()
     {
         AllItems = CollectibleService.GetAll();
         ItemTypes = CollectibleService.GetItemTypes();
         Countries = CollectibleService.GetCountries();
+        
+        LoadFiltersFromUrl();
         ApplyFilters();
+    }
+
+    private void LoadFiltersFromUrl()
+    {
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        var queryParams = QueryHelpers.ParseQuery(uri.Query);
+
+        if (queryParams.TryGetValue("search", out var searchValue))
+            _searchText = searchValue.ToString();
+
+        if (queryParams.TryGetValue("type", out var typeValue))
+            _selectedItemType = typeValue.ToString();
+
+        if (queryParams.TryGetValue("country", out var countryValue))
+            _selectedCountry = countryValue.ToString();
+    }
+
+    private void UpdateUrl()
+    {
+        var queryParams = new Dictionary<string, string?>();
+        
+        if (!string.IsNullOrWhiteSpace(_searchText))
+            queryParams["search"] = _searchText;
+        
+        if (!string.IsNullOrWhiteSpace(_selectedItemType))
+            queryParams["type"] = _selectedItemType;
+        
+        if (!string.IsNullOrWhiteSpace(_selectedCountry))
+            queryParams["country"] = _selectedCountry;
+
+        var url = queryParams.Any() 
+            ? QueryHelpers.AddQueryString("/", queryParams!) 
+            : "/";
+        
+        Navigation.NavigateTo(url, replace: true);
     }
 
     private void ApplyFilters() => FilteredItems = AllItems
@@ -49,15 +87,21 @@ public partial class Home : ComponentBase
                     c.ItemType.Equals(SelectedItemType, StringComparison.OrdinalIgnoreCase))
         .Where(c => string.IsNullOrWhiteSpace(SelectedCountry) ||
                     c.Country.Equals(SelectedCountry, StringComparison.OrdinalIgnoreCase))
+        .OrderBy(c => c.Name)
         .ToList();
 
     private void ClearFilters()
     {
         (_searchText, _selectedItemType, _selectedCountry) = (null, null, null);
         ApplyFilters();
+        UpdateUrl();
     }
 
     private void ToggleFilterDrawer() => FilterDrawerOpen = !FilterDrawerOpen;
 
-    private void ViewItem(string id) => Navigation.NavigateTo($"/collectible/{id}");
+    private void ViewItem(string id)
+    {
+        var returnUrl = Navigation.Uri.Replace(Navigation.BaseUri.TrimEnd('/'), "");
+        Navigation.NavigateTo($"/collectible/{id}?returnUrl={Uri.EscapeDataString(returnUrl)}");
+    }
 }

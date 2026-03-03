@@ -2,6 +2,7 @@ using helm.Components.Dialogs;
 using helm.Models;
 using helm.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.WebUtilities;
 using MudBlazor;
 
 namespace helm.Components.Pages;
@@ -17,8 +18,12 @@ public partial class CollectibleDetail : ComponentBase
     [Inject]
     private IDialogService DialogService { get; set; } = default!;
 
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
+
     private Collectible? Item { get; set; }
     private int SelectedImageIndex { get; set; }
+    private string BackUrl { get; set; } = "/";
 
     private CollectibleImage? SelectedImage =>
         Item?.Images.ElementAtOrDefault(SelectedImageIndex) ?? Item?.Images.FirstOrDefault();
@@ -27,6 +32,14 @@ public partial class CollectibleDetail : ComponentBase
     {
         Item = CollectibleService.GetById(Id);
         SelectedImageIndex = 0;
+        
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        var queryParams = QueryHelpers.ParseQuery(uri.Query);
+        
+        if (queryParams.TryGetValue("returnUrl", out var returnUrl))
+        {
+            BackUrl = returnUrl.ToString();
+        }
     }
 
     private void SelectImage(int index)
